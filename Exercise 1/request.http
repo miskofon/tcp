@@ -1,0 +1,32 @@
+@token=<Paste token here>
+
+## Find properties of image
+
+POST https://vision.googleapis.com/v1/images:annotate
+Authorization: Bearer {{token}}
+Content-Type: application/json; charset=utf-8
+
+{
+    "requests": [
+      {
+        "image": {
+          "source": {
+            "imageUri": "https://storage.googleapis.com/symfoni-prod-gwphosting-no/2020/01/tcp-girls_chatting.jpg"
+          }
+        },
+        "features": [
+          {
+            "type": "LABEL_DETECTION",
+            "maxResults": 8
+          },
+          {
+            "type": "OBJECT_LOCALIZATION",
+            "maxResults": 2
+          },
+          {
+          "type": "SAFE_SEARCH_DETECTION"
+        }
+        ]
+      }
+    ]
+  }
