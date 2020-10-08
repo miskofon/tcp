@@ -55,7 +55,7 @@ export class TweetsManagerService {
   }
 
   private getAllDataFromServer(): Observable<ITweetData[]> {
-    return this.httpClient.get<ITweetData[]>("https://us-central1-hello-world-dotnet-262708.cloudfunctions.net/tweeterwebhook?crc_token=a");
+    return this.httpClient.get<ITweetData[]>("https://us-central1-hello-world-dotnet-262708.cloudfunctions.net/readTweets");
   }
 
   private subscribeForTweetsUpates(): void {
@@ -75,7 +75,7 @@ export class TweetsManagerService {
   }
 
   private getNewDataFromServer(): Observable<ITweetData[]> {
-    return this.httpClient.get<ITweetData[]>(`https://server/getData?after=${this.timeWhenTweetsWhereCollectedInMiliseconds}`);
+    return this.httpClient.get<ITweetData[]>(`https://us-central1-hello-world-dotnet-262708.cloudfunctions.net/readTweets?after=${this.timeWhenTweetsWhereCollectedInMiliseconds}`);
   }
 
   private timeWhenTweetsWhereCollectedInMiliseconds = Date.now();
