@@ -20,3 +20,11 @@ It can filter tweets by creation date, so it can be used to check for tweets cre
 Angular application which fetch tweets from **tweet-list-api** and displayes them. Periodicaly checks if new tweets are avaiable but sending request to **tweet-list-api** with filer for tweet creation date.
 
 Appliaction is being deployed into docker container and run by Cloud Run.
+
+
+## TODO
+### Finalize connection to twitter webhooks.
+I had an issue finalizing registration of my webhook to twitter user's account subscriptions. I was able to test my solution only by sending manually request which would be send by Twitter.
+
+### Deployment scripts
+Didn't want to spend more time on it.
